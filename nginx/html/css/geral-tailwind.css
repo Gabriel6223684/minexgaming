@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  h1 {
+    @apply text-4xl font-bold text-gray-800;
+  }
+  p {
+    @apply text-base text-gray-600;
+  }
+}
+@layer components {
+  .btn {
+    @apply bg-blue-500 text-white font-semibold py-2 px-4 rounded;
+  }
+  .btn:hover {
+    @apply bg-blue-600;
+  }
+}
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .bg-gradient {
+    background: linear-gradient(45deg, #6b7280, #3b82f6);
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  @apply w-4/5 mx-auto overflow-hidden;
+}
+
+.header,
+.footer {
+  @apply bg-teal-500 text-white py-5 text-center;
+}
+
+.navbar {
+  @apply bg-gray-800 text-white py-2 text-center;
+}
+
+.navbar a {
+  @apply text-white mx-4 no-underline;
+}
+
+.navbar a:hover {
+  @apply underline;
+}
+
+.button {
+  @apply inline-block bg-red-500 text-white py-2 px-4 rounded;
+}
+
+.button:hover {
+  @apply bg-red-600;
+}
+.button {
+  @apply inline-block bg-red-500 text-white py-2 px-4 rounded;
+}
+.button:hover {
+  @apply bg-red-600;
+}
+
+@media screen {
+  .container {
+    @apply w-full px-4;
+  }
+}
+@media (min-width: 640px) {
+  .container {
+    @apply w-11/12;
+  }
+}
