@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigin Up</title>
+    <link href="/nginx/html/css/register.css" rel="stylesheet">
+</head>
+
+<body>
+    <form id="form">
+        <h2>Sigin Up</h2>
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <div class="password-wrapper">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <span class="toggle-password" id="togglePassword">&#128065;</span>
+        </div>
+        <button type="submit">Sigin Up</button>
+        <a href="login.html">Already have an account? Sign In</a>
+        <a href="home.html">Back to Home</a>
+    </form>
+    <script>
+        const password = document.getElementById("password");
+        const toggle = document.getElementById("togglePassword");
+        const eyeIcon = document.getElementById("eyeIcon");
+
+        toggle.addEventListener("click", () => {
+            if (password.type === "password") {
+                password.type = "text";
+                eyeIcon.innerHTML = `
+                <path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 3a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4z" fill="#777"/>
+                <line x1="4" y1="4" x2="20" y2="20" stroke="#777" stroke-width="2"/>
+            `;
+            } else {
+                password.type = "password";
+                eyeIcon.innerHTML = `
+                <path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10z" fill="#777"/>
+            `;
+            }
+        });
+    </script>
+</body>
+
+</html>

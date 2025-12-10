@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login In</title>
+    <link href="/nginx/html/css/login.css" rel="stylesheet">
+</head>
+
+<body>
+    <form id="form">
+        <h2>Sigin In</h2>
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <div class="password-wrapper">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <span class="toggle-password" id="togglePassword">&#128065;</span>
+        </div>
+        <button type="submit">Login</button>
+        <a href="register.html">Don't have an account? Sign Up</a>
+        <a href="#" id="openModal">Forgot Password?</a>
+        <a href="home.html">Back to Home</a>
+    </form>
+
+    <div class="modal" id="forgotModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+
+            <h3>Recover Password</h3>
+            <p>Enter your email to receive reset instructions:</p>
+
+            <input type="email" id="recoverEmail" placeholder="Your email">
+
+            <button id="sendRecover">Send</button>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById("forgotModal");
+        const openModal = document.getElementById("openModal");
+        const closeModal = document.getElementById("closeModal");
+
+        openModal.onclick = function (e) {
+            e.preventDefault();
+            modal.style.display = "flex";
+        };
+
+        closeModal.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        document.getElementById("sendRecover").onclick = function () {
+            const email = document.getElementById("recoverEmail").value;
+            if (email.trim() === "") {
+                alert("Please enter your email.");
+                return;
+            }
+            alert("If this email exists, a recovery link will be sent.");
+            modal.style.display = "none";
+        };
+
+        const password = document.getElementById("password");
+        const toggle = document.getElementById("togglePassword");
+        const eyeIcon = document.getElementById("eyeIcon");
+
+        toggle.addEventListener("click", () => {
+            if (password.type === "password") {
+                password.type = "text";
+                eyeIcon.innerHTML = `
+                <path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 3a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4z" fill="#777"/>
+                <line x1="4" y1="4" x2="20" y2="20" stroke="#777" stroke-width="2"/>
+            `;
+            } else {
+                password.type = "password";
+                eyeIcon.innerHTML = `
+                <path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10z" fill="#777"/>
+            `;
+            }
+        });
+    </script>
+</body>
+
+</html>
