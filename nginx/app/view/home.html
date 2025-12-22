@@ -5,32 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>início</title>
-    <link rel="stylesheet" href="/html/css/geral.css">
-    <link rel="stylesheet" href="/html/css/geral-tailwind.css">
+    <link rel="stylesheet" href="/minexgaming/nginx/html/css/home.css">
 </head>
 
 <body>
+    <div class="perfil">
+    </div>
     <h1>Bem-vindo à página inicial!</h1>
     <p>Esta é a página inicial do nosso aplicativo.</p>
-    <fieldset>
-        <legend>Links Úteis</legend>
-        <ul>
-            <li><a href="/"></a></li>
-            <li><a href="/"></a></li>
-            <li><a href="/"></a></li>
-        </ul>
-    </fieldset>
-    <div class="pesquisar">
-        <input type="text" placeholder="Pesquisar...">
-        <button type="button" id="pesquisar">Buscar</button>
-    </div>
-    <div class="personas">
-        <h2>Personas</h2>
-        <ul id="lista-personas">
-        </ul>
-    </div>
-    <script src="/html/js/geral.js">
-    </script>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <fieldset>
+                        <legend>Links Úteis</legend>
+                        <ul>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.html">Registrar</a></li>
+                            <li><a href="explore.html">Explorar</a></li>
+                        </ul>
+                    </fieldset>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
