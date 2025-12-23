@@ -5,11 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>início</title>
+    <link rel="icon" href="/minexgaming/nginx/icon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/minexgaming/nginx/html/css/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="https://cdn.datatables.net/2.3.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/3.0.7/css/responsive.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/staterestore/1.4.3/css/stateRestore.bootstrap5.min.css" rel="stylesheet">
+    <link href="/minexgaming/nginx/html/css/color.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="perfil">
+        <i class="fa-solid fa-circle-user" data-bs-toggle="modal" data-bs-target="#modal-dialog"></i>
+        <!-- Modal -->
+        <div class="modal fade" id="modal-dialog" tabindex="-1" aria-labelledby="modal-dialogLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal-dialogLabel">Configurações</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="perfil-usuario" id="perfil-usuario">
+                            <i class=" fa-regular fa-circle-user" id="perfil-foto"></i>
+                            <span class="nome-usuario">Nome do Usuário</span>
+                        </div>
+                        <label for="theme-select">Escolha o Tema:</label>
+                        <select id="theme-select" class="form-select" aria-label="Default select example">
+                            <option value="light"><i class="fa-duotone fa-solid fa-sun-cloud"></i>Claro</option>
+                            <option value="dark"><i class="fa-regular fa-cloud-moon"></i>Escuro</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <h1>Bem-vindo à página inicial!</h1>
     <p>Esta é a página inicial do nosso aplicativo.</p>
@@ -19,21 +49,86 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <fieldset>
-                        <legend>Links Úteis</legend>
-                        <ul>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Registrar</a></li>
-                            <li><a href="explore.html">Explorar</a></li>
-                        </ul>
+                        <legend>Links Úteis
+                            <ul>
+                                <li><a href="login.html" class="border">Login</a></li>
+                                <li><a href="register.html" class="border">Registrar</a></li>
+                                <li><a href="explore.html" class="border">Explorar</a></li>
+                                <li><a href="" type="button" class="border" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">Sobre</a></li>
+                            </ul>
+                        </legend>
                     </fieldset>
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Sobre o site:</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <strong>Confiança</strong> <i class="fa-solid fa-check"></i> <br>
+                    <i class="fa-solid fa-dot"></i>
+                    Os dados de login nunca serão vazados, são protegidos com segurança;
+                    <br>
+                    <br>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+                    <i class="fa-solid fa-dot"></i>
+                    Não contém malware/vírus, pois programo com toda a honestidade;
+                    <br>
+                    <br>
+
+                    <i class="fa-solid fa-dot"></i>
+                    Pode demorar por atualização, pois sou só um;
+                    <br>
+                    <br>
+
+                    <strong>Contato</strong> <i class="fa-solid fa-check"></i> <br>
+                    <i class="fa-solid fa-dot"></i>
+                    Em caso de problemas no site, procure por um desses contatos para me informar, farei meu
+                    máximo
+                    por vocês:
+                    <br>
+                    <br>
+                    Email:
+                    <br>
+                    <i class="fa-solid fa-envelope"></i>
+                    gabrielgb.luiz000@gmail.com
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/additional-methods.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/localization/messages_pt_BR.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/jquery.inputmask.min.js"></script>
+
+    <script src="https://cdn.datatables.net/2.3.5/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.3.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.7/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.7/js/responsive.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/staterestore/1.4.3/js/dataTables.stateRestore.min.js"></script>
+    <script src="https://cdn.datatables.net/staterestore/1.4.3/js/stateRestore.bootstrap5.min.js"></script>
+    <script src="/minexgaming/nginx/html/js/color.js"></script>
+    <script src="/minexgaming/nginx/html/js/home.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,22 @@
+/* Tema padrão (Claro) */
+body {
+  background-color: #f0f0f0; /* Fundo claro */
+  color: #333; /* Texto escuro */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+/* Tema Escuro - aplicado quando a classe 'dark-mode' está no body ou html */
+body.dark-mode {
+  background-color: #121212; /* Fundo escuro */
+  color: #474747; /* Texto claro */
+}
+
+/* Estilos adicionais para o select e outros elementos, se necessário */
+header {
+  padding: 10px;
+  background-color: #ddd;
+}
+
+body.dark-mode header {
+  background-color: #333;
+}
