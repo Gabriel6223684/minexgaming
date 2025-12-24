@@ -1,0 +1,36 @@
+/* style.css */
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Classe para esconder elementos */
+.hidden {
+  display: none;
+}
+#logout,
+#logout {
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#entrar {
+  height: 40px;
+  width: 80px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}

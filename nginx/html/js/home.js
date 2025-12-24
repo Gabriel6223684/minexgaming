@@ -1,5 +1,7 @@
 import { Validate } from "./Validate.js";
 import { Requests } from "./Requests.js";
+import { entrar_logout } from "./entrar_logout.js";
+import { registrar } from "./registrar.js";
 
 // Função chamada após um login bem-sucedido
 function mostrarPerfilUsuario(nomeUsuario) {

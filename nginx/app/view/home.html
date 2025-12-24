@@ -13,6 +13,7 @@
     <link href="https://cdn.datatables.net/responsive/3.0.7/css/responsive.bootstrap5.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/staterestore/1.4.3/css/stateRestore.bootstrap5.min.css" rel="stylesheet">
     <link href="/minexgaming/nginx/html/css/color.css" rel="stylesheet">
+    <link href="/minexgaming/nginx/html/css/entrar_sair.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,12 +37,22 @@
                             <option value="light"><i class="fa-duotone fa-solid fa-sun-cloud"></i>Claro</option>
                             <option value="dark"><i class="fa-regular fa-cloud-moon"></i>Escuro</option>
                         </select>
+                        <br>
+                        <header>
+                            <div class="entrar">
+                                <a type="button" id="entrar" href="./login.html"
+                                    class="btn btn-success entrar">Entrar</a>
+                            </div>
+                            <div class="logout">
+                                <button type="button" id="logout" class="btn btn-danger logout">Sair da conta</button>
+                            </div>
+                        </header>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <h1>Bem-vindo à página inicial!</h1>
+    <h1>Bem-vindo ao Xmine Gaming!</h1>
     <p>Esta é a página inicial do nosso aplicativo.</p>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -129,6 +140,7 @@
     <script src="https://cdn.datatables.net/staterestore/1.4.3/js/stateRestore.bootstrap5.min.js"></script>
     <script src="/minexgaming/nginx/html/js/color.js"></script>
     <script src="/minexgaming/nginx/html/js/home.js"></script>
+    <script src="/minexgaming/nginx/html/js/entrar_logout.js"></script>
 </body>
 
 </html>

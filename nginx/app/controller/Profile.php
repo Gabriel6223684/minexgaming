@@ -2,7 +2,10 @@
 
 namespace app\controller;
 
-class Profile
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+
+class Profile extends Base
 {
     private $profile;
     private $profile_login;
