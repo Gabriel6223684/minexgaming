@@ -27,3 +27,10 @@ themeSelect.addEventListener('change', (event) => {
     // Salvar a preferência no localStorage
     localStorage.setItem(localStorageKey, selectedTheme);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('colorInput');
+    if (!input) return;
+
+    input.value = 'dark';
+});

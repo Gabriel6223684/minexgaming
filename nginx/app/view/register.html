@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <form action="/register" method="post" id="form">
+    <form action="/register" method="post" id="formregister">
         <h2>Registre-se</h2>
         <label for="username">Nome de usuário:</label><br>
         <input type="text" id="username" name="username" required><br><br>
@@ -22,9 +22,9 @@
         <input type="email" id="email" name="email" required><br><br>
 
         <label for="password">Senha:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
+        <input type="password" id="senha" name="senha" required><br><br>
 
-        <input type="submit" value="Registrar">
+        <button type="button" id="buttonregister" class="btn btn-success" value="Registrar">Registrar</button>
 
         <a href="login.html">Já tem uma conta? Faça login</a>
         <a href="home.html">Voltar à página inicial</a>
@@ -33,6 +33,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="/minexgaming/nginx/html/js/color.js"></script>
+    <script type="module" src="/minexgaming/nginx/html/js/registrar.js"></script>
 
 </body>
 

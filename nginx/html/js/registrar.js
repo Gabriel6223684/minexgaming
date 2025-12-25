@@ -1,4 +1,15 @@
-import { Validate } from "./Validate.js";
-import { Requests } from "./Requests.js";
-import { entrar_logout } from "./home";
-import { entrar_logout } from "./entrar_logout.js";
+document.getElementById('formregister').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch('/register', {
+        method: 'POST',
+        body: formData
+    })
+        .then(r => r.text()) // TEMPORÁRIO PARA DEBUG
+        .then(r => {
+            console.log(r);
+            alert(r);
+        });
+});
