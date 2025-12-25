@@ -1,0 +1,121 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Light mode */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    /* Primary: Modern Purple-Blue */
+    --primary: 256 95% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Cyan accent */
+    --secondary: 180 100% 45%;
+    --secondary-foreground: 240 10% 10%;
+
+    --muted: 240 10% 93%;
+    --muted-foreground: 240 5% 50%;
+
+    /* Accent: Electric Blue */
+    --accent: 200 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 92%;
+    --input: 240 10% 95%;
+    --ring: 256 95% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 250 20% 98%;
+    --sidebar-foreground: 240 10% 10%;
+    --sidebar-primary: 256 95% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 100% 45%;
+    --sidebar-accent-foreground: 240 10% 10%;
+    --sidebar-border: 240 10% 92%;
+    --sidebar-ring: 256 95% 50%;
+  }
+
+  .dark {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Primary: Bright Purple */
+    --primary: 260 100% 65%;
+    --primary-foreground: 240 10% 10%;
+
+    /* Secondary: Bright Cyan */
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 240 10% 10%;
+
+    --muted: 240 10% 25%;
+    --muted-foreground: 240 5% 65%;
+
+    /* Accent: Bright Electric Blue */
+    --accent: 200 100% 60%;
+    --accent-foreground: 240 10% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 15%;
+    --ring: 260 100% 65%;
+
+    --sidebar-background: 240 10% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 260 100% 65%;
+    --sidebar-primary-foreground: 240 10% 10%;
+    --sidebar-accent: 180 100% 50%;
+    --sidebar-accent-foreground: 240 10% 10%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 260 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
