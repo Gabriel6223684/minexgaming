@@ -28,7 +28,6 @@ const NotFound = () => {
           </button>
         </nav>
       </header>
-
       {/* Error Content */}
       <div className="flex-1 flex items-center justify-center px-4 py-20">
         <div className="max-w-md w-full text-center">
@@ -60,7 +59,7 @@ const NotFound = () => {
       {/* Footer */}
       <footer className="border-t border-border bg-background/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-8 text-center text-sm text-foreground/60">
-          <p>&copy; 2024 CodeNet. Building the future of developer networking.</p>
+          <p>&copy; 2025 CodeNet. Building the future of developer networking.</p>
         </div>
       </footer>
     </div>
