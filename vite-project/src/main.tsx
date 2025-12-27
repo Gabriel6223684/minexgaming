@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./global.css";
-
+import "./style.css";
+import "./tailwind.config";
 import Index from "./pages/Index";
 import Explore from "./pages/Explore";
 import Messages from "./pages/Messages";
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/notfound" element={<NotFound />} />
+          <Route path="/index" element={<Index />} />
           <Route path="/home" element={<Home />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

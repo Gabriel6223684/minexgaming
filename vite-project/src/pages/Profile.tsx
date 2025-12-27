@@ -1,7 +1,12 @@
+import "./global.css";
+import "./style.css";
+import "./tailwind.config";
+
 export default function Profile() {
   return (
     <div>
-      <h1>Profile</h1>
+      pageName="My Profile" description="Build your developer profile and
+      showcase your skills, projects, and experience to the CodeNet community."
     </div>
   );
 }

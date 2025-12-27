@@ -5,7 +5,10 @@ interface PagePlaceholderProps {
   description?: string;
 }
 
-export default function PagePlaceholder({ pageName, description }: PagePlaceholderProps) {
+export default function PagePlaceholder({
+  pageName,
+  description,
+}: PagePlaceholderProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-primary/5 flex flex-col">
       {/* Navigation Header */}
@@ -29,15 +32,16 @@ export default function PagePlaceholder({ pageName, description }: PagePlacehold
           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <MessageCircle className="w-8 h-8 text-primary" />
           </div>
-          
+
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             {pageName}
           </h1>
-          
+
           <p className="text-foreground/60 mb-8 text-lg leading-relaxed">
-            {description || `This page is coming soon! Help shape CodeNet by letting us know what features you'd like to see here.`}
+            {description ||
+              `This page is coming soon! Help shape CodeNet by letting us know what features you'd like to see here.`}
           </p>
-          
+
           <div className="bg-card border border-border rounded-lg p-6 mb-6">
             <p className="text-sm text-foreground/70 mb-4">
               Want to see this feature built? Tell us more about what you need!
@@ -46,9 +50,9 @@ export default function PagePlaceholder({ pageName, description }: PagePlacehold
               Request Feature
             </button>
           </div>
-          
-          <a 
-            href="/" 
+
+          <a
+            href="/"
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition"
           >
             ← Back to Home
@@ -59,7 +63,9 @@ export default function PagePlaceholder({ pageName, description }: PagePlacehold
       {/* Footer */}
       <footer className="border-t border-border bg-background/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-8 text-center text-sm text-foreground/60">
-          <p>&copy; 2024 CodeNet. Building the future of developer networking.</p>
+          <p>
+            &copy; 2024 CodeNet. Building the future of developer networking.
+          </p>
         </div>
       </footer>
     </div>

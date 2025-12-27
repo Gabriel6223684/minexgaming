@@ -1,3 +1,7 @@
+import "./global.css";
+import "./style.css";
+import "./tailwind.config";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-slate-900 text-white flex items-center justify-center">
