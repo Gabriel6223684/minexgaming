@@ -4,7 +4,6 @@ import "./tailwind.config";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import NotFound from "./pages/NotFound";
 import Projects from "./pages/Projects";
@@ -18,9 +17,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/index" element={<Index />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/notfound" element={<NotFound />} />
