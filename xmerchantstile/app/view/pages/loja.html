@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Minha Loja — Xmerchant</title>
+        <link rel="stylesheet" href="../../../src/public/designs/loja.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+    <body>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-logo">X</span>
+                <span class="brand-name">merchant</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <p class="nav-section-label">Loja</p>
+                <a class="nav-link active" href="#produtos"
+                    onclick="showSection('produtos')">
+                    <i class="fa-solid fa-box"></i> Produtos
+                </a>
+                <a class="nav-link" href="#config"
+                    onclick="showSection('config')">
+                    <i class="fa-solid fa-sliders"></i> Configurações
+                </a>
+                <a class="nav-link" href="#aparencia"
+                    onclick="showSection('aparencia')">
+                    <i class="fa-solid fa-palette"></i> Aparência
+                </a>
+                <a class="nav-link" href="#entrega"
+                    onclick="showSection('entrega')">
+                    <i class="fa-solid fa-truck"></i> Entrega e frete
+                </a>
+                <a class="nav-link" href="#pagamentos"
+                    onclick="showSection('pagamentos')">
+                    <i class="fa-solid fa-credit-card"></i> Pagamentos
+                </a>
+
+                <p class="nav-section-label" style="margin-top:1.5rem">Geral</p>
+                <a class="nav-link" href="home.html">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <a class="nav-link" href="login.html">
+                    <i class="fa-solid fa-right-from-bracket"></i> Sair
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-avatar-sm">JS</div>
+                <div>
+                    <p class="sf-name">João da Silva</p>
+                    <p class="sf-email">joao@xmerchant.com</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main">
+
+            <!-- ── Produtos ── -->
+            <section class="page-section active" id="section-produtos">
+                <div class="section-header">
+                    <div>
+                        <h1>Produtos</h1>
+                        <p class="section-sub">Gerencie os itens da sua loja</p>
+                    </div>
+                    <button class="btn-primary" onclick="openModal()">
+                        <i class="fa-solid fa-plus"></i> Novo produto
+                    </button>
+                </div>
+
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar produto..."
+                        oninput="filterProducts(this.value)">
+                </div>
+
+                <div class="products-grid" id="products-grid">
+                    <!-- Cards gerados pelo JS -->
+                </div>
+            </section>
+
+            <!-- ── Configurações ── -->
+            <section class="page-section" id="section-config">
+                <div class="section-header">
+                    <div>
+                        <h1>Configurações da loja</h1>
+                        <p class="section-sub">Informações gerais e dados de
+                            contato</p>
+                    </div>
+                    <button class="btn-primary"><i
+                            class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                </div>
+                <div class="settings-card">
+                    <div class="form-group">
+                        <label>Nome da loja</label>
+                        <div class="input-wrap"><i
+                                class="fa-solid fa-store"></i><input type="text"
+                                value="Minha Loja Xmerchant"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail de contato</label>
+                        <div class="input-wrap"><i
+                                class="fa-regular fa-envelope"></i><input
+                                type="email" value="joao@xmerchant.com"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <div class="input-wrap"><i
+                                class="fa-solid fa-phone"></i><input type="tel"
+                                placeholder="(69) 99999-0000"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Endereço</label>
+                        <div class="input-wrap"><i
+                                class="fa-solid fa-location-dot"></i><input
+                                type="text"
+                                placeholder="Rua, número, cidade"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>CNPJ / CPF</label>
+                        <div class="input-wrap"><i
+                                class="fa-solid fa-id-card"></i><input
+                                type="text"
+                                placeholder="00.000.000/0000-00"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── Aparência ── -->
+            <section class="page-section" id="section-aparencia">
+                <div class="section-header">
+                    <div>
+                        <h1>Aparência</h1>
+                        <p class="section-sub">Personalize o visual da sua
+                            loja</p>
+                    </div>
+                    <button class="btn-primary"><i
+                            class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                </div>
+                <div class="settings-card">
+                    <div class="form-group">
+                        <label>Cor primária</label>
+                        <div class="color-row">
+                            <input type="color" value="#534AB7"
+                                class="color-input">
+                            <span class="color-label">#534AB7</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Logo da loja</label>
+                        <div class="upload-area">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <p>Arraste uma imagem ou <a href="#">clique para
+                                    enviar</a></p>
+                            <span>PNG, JPG até 2MB</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Banner da loja</label>
+                        <div class="upload-area">
+                            <i class="fa-solid fa-image"></i>
+                            <p>Arraste uma imagem ou <a href="#">clique para
+                                    enviar</a></p>
+                            <span>PNG, JPG — 1200×400px recomendado</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── Entrega ── -->
+            <section class="page-section" id="section-entrega">
+                <div class="section-header">
+                    <div>
+                        <h1>Entrega e frete</h1>
+                        <p class="section-sub">Defina zonas e valores de
+                            envio</p>
+                    </div>
+                    <button class="btn-primary"><i class="fa-solid fa-plus"></i>
+                        Nova zona</button>
+                </div>
+                <div class="settings-card">
+                    <div class="delivery-zone">
+                        <div class="dz-info">
+                            <span class="dz-name">Zona local</span>
+                            <span class="dz-detail">Porto Velho, RO — até
+                                20km</span>
+                        </div>
+                        <span class="dz-price">R$ 8,00</span>
+                        <button class="icon-btn"><i
+                                class="fa-solid fa-pen"></i></button>
+                    </div>
+                    <div class="delivery-zone">
+                        <div class="dz-info">
+                            <span class="dz-name">Rondônia</span>
+                            <span class="dz-detail">Todo o estado</span>
+                        </div>
+                        <span class="dz-price">R$ 18,00</span>
+                        <button class="icon-btn"><i
+                                class="fa-solid fa-pen"></i></button>
+                    </div>
+                    <div class="delivery-zone">
+                        <div class="dz-info">
+                            <span class="dz-name">Brasil</span>
+                            <span class="dz-detail">Correios PAC / SEDEX</span>
+                        </div>
+                        <span class="dz-price">Calculado</span>
+                        <button class="icon-btn"><i
+                                class="fa-solid fa-pen"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── Pagamentos ── -->
+            <section class="page-section" id="section-pagamentos">
+                <div class="section-header">
+                    <div>
+                        <h1>Pagamentos</h1>
+                        <p class="section-sub">Métodos aceitos na sua loja</p>
+                    </div>
+                </div>
+                <div class="settings-card">
+                    <div class="payment-method">
+                        <div class="pm-icon icon-green"><i
+                                class="fa-solid fa-pix"></i></div>
+                        <div class="pm-info"><span
+                                class="pm-name">Pix</span><span
+                                class="pm-desc">Receba
+                                instantaneamente</span></div>
+                        <label class="toggle"><input type="checkbox"
+                                checked><span class="slider"></span></label>
+                    </div>
+                    <div class="payment-method">
+                        <div class="pm-icon icon-blue"><i
+                                class="fa-solid fa-credit-card"></i></div>
+                        <div class="pm-info"><span class="pm-name">Cartão de
+                                crédito</span><span class="pm-desc">Visa,
+                                Mastercard, Elo</span></div>
+                        <label class="toggle"><input type="checkbox"
+                                checked><span class="slider"></span></label>
+                    </div>
+                    <div class="payment-method">
+                        <div class="pm-icon icon-amber"><i
+                                class="fa-solid fa-barcode"></i></div>
+                        <div class="pm-info"><span class="pm-name">Boleto
+                                bancário</span><span class="pm-desc">Vencimento
+                                em 3 dias úteis</span></div>
+                        <label class="toggle"><input type="checkbox"><span
+                                class="slider"></span></label>
+                    </div>
+                    <div class="payment-method">
+                        <div class="pm-icon icon-purple"><i
+                                class="fa-solid fa-wallet"></i></div>
+                        <div class="pm-info"><span class="pm-name">Mercado
+                                Pago</span><span class="pm-desc">Integração
+                                direta</span></div>
+                        <label class="toggle"><input type="checkbox"><span
+                                class="slider"></span></label>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Modal: Novo produto -->
+        <div class="modal-overlay hidden" id="modal-overlay"
+            onclick="closeModal(event)">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2>Novo produto</h2>
+                    <button class="modal-close"
+                        onclick="closeModal(null, true)"><i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nome do produto</label>
+                        <div class="input-wrap"><i
+                                class="fa-solid fa-tag"></i><input type="text"
+                                placeholder="Ex: Camiseta Branca P"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Preço (R$)</label>
+                            <div class="input-wrap"><i
+                                    class="fa-solid fa-brazilian-real-sign"></i><input
+                                    type="number" placeholder="0,00"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Estoque</label>
+                            <div class="input-wrap"><i
+                                    class="fa-solid fa-cubes"></i><input
+                                    type="number" placeholder="0"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Categoria</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-list"></i>
+                            <select>
+                                <option>Selecione...</option>
+                                <option>Roupas</option>
+                                <option>Eletrônicos</option>
+                                <option>Alimentos</option>
+                                <option>Acessórios</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea
+                            placeholder="Descreva o produto..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-ghost"
+                        onclick="closeModal(null, true)">Cancelar</button>
+                    <button class="btn-primary" onclick="addProduct()"><i
+                            class="fa-solid fa-plus"></i> Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="../../../src/public/js/loja.js"></script>
+    </body>
+</html>

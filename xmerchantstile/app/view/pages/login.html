@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Entrar — Xmerchant</title>
+        <link rel="stylesheet" href="../../../src/public/designs/login.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+    <body>
+
+        <div class="auth-layout">
+
+            <!-- Painel esquerdo — visual -->
+            <div class="auth-panel">
+                <div class="auth-panel-inner">
+                    <div class="auth-brand">
+                        <span class="brand-logo">X</span>
+                        <span class="brand-name">merchant</span>
+                    </div>
+                    <div class="auth-tagline">
+                        <h2>Sua loja,<br>do seu jeito.</h2>
+                        <p>Gerencie produtos, vendas e muito mais em um painel
+                            moderno e intuitivo.</p>
+                    </div>
+                    <div class="auth-stats">
+                        <div class="stat-pill"><i class="fa-solid fa-store"></i>
+                            +12.000 lojas ativas</div>
+                        <div class="stat-pill"><i class="fa-solid fa-bolt"></i>
+                            Configuração em minutos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel direito — formulário -->
+            <div class="auth-form-side">
+                <div class="auth-form-wrap">
+
+                    <div class="form-tabs">
+                        <button class="tab-btn active" id="tab-login"
+                            onclick="switchTab('login')">Entrar</button>
+                        <button class="tab-btn" id="tab-register"
+                            onclick="switchTab('register')">Criar conta</button>
+                    </div>
+
+                    <!-- Login -->
+                    <div class="tab-content" id="content-login">
+                        <h1 class="form-title">Bem-vindo de volta</h1>
+                        <p class="form-subtitle">Entre com sua conta
+                            Xmerchant</p>
+
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <div class="input-wrap">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" placeholder="seu@email.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Senha
+                                <a href="#" class="label-link">Esqueci minha
+                                    senha</a>
+                            </label>
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" placeholder="••••••••"
+                                    id="pwd-login">
+                                <button class="pwd-toggle"
+                                    onclick="togglePwd('pwd-login', this)">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn-submit"
+                            onclick="window.location.href='home.html'">
+                            Entrar <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <div class="divider"><span>ou continue com</span></div>
+
+                        <div class="social-btns">
+                            <button class="social-btn"><i
+                                    class="fa-brands fa-google"></i>
+                                Google</button>
+                            <button class="social-btn"><i
+                                    class="fa-brands fa-facebook-f"></i>
+                                Facebook</button>
+                        </div>
+                    </div>
+
+                    <!-- Cadastro -->
+                    <div class="tab-content hidden" id="content-register">
+                        <h1 class="form-title">Crie sua conta</h1>
+                        <p class="form-subtitle">Grátis para sempre no plano
+                            básico</p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                <div class="input-wrap">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" placeholder="João">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Sobrenome</label>
+                                <div class="input-wrap">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" placeholder="Silva">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <div class="input-wrap">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" placeholder="seu@email.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Senha</label>
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password"
+                                    placeholder="Mínimo 8 caracteres"
+                                    id="pwd-register">
+                                <button class="pwd-toggle"
+                                    onclick="togglePwd('pwd-register', this)">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Concordo com os <a href="#">Termos de uso</a>
+                                e <a href="#">Política de privacidade</a></span>
+                        </label>
+
+                        <button class="btn-submit"
+                            onclick="window.location.href='home.html'">
+                            Criar conta <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <div class="divider"><span>ou continue com</span></div>
+                        <div class="social-btns">
+                            <button class="social-btn"><i
+                                    class="fa-brands fa-google"></i>
+                                Google</button>
+                            <button class="social-btn"><i
+                                    class="fa-brands fa-facebook-f"></i>
+                                Facebook</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+      document.getElementById('tab-' + tab).classList.add('active');
+      document.getElementById('content-' + tab).classList.remove('hidden');
+    }
+
+    function togglePwd(id, btn) {
+      const input = document.getElementById(id);
+      const icon = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.replace('fa-eye', 'fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.replace('fa-eye-slash', 'fa-eye');
+      }
+    }
+  </script>
+    </body>
+</html>
